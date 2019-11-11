@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Project is not completely finished because we could not figure out how to get the index of an array item in an index and the tb with the balance also won't update :)
+
 namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
 {
 
@@ -72,12 +74,14 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
             lbCurrentStandingOfDebtList.Items.Clear();
         }
 
+
+
         //HERE STARTS THE CODE FOR THE ARRAY STUFF
 
 
 
         private void btnAddDefaultsArray_Click(object sender, EventArgs e)
-        { 
+        {
             //adds the devault names to the listboxes once 
             for (int i = 0; i < defaultArrayNames.Length; i++)
             {
@@ -88,6 +92,8 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
                 allArrayNames[i] = defaultArrayNames[i];
             }
 
+            counter = 5;
+
             btnAddDefaultsArray.Enabled = false;
 
         }
@@ -95,9 +101,9 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
         private void btnRemovePersonArray_Click(object sender, EventArgs e) //Button for removing selected players, can't change the name to the proper name because vs suck
         {
             //removes the selected name in lbNameList
-            if (this.lbNameListArray.SelectedItem != null && balanceArray[indexBalance] == 0.00) 
-            { 
-                this.lbNameListArray.Items.Remove(this.lbNameListArray.SelectedItem); 
+            if (this.lbNameListArray.SelectedItem != null && balanceArray[indexBalance] == 0.00)
+            {
+                this.lbNameListArray.Items.Remove(this.lbNameListArray.SelectedItem);
                 //here we need to replace the name in the array with NULL
             }
             else
@@ -115,12 +121,39 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
 
         private void btnAddNameArray_Click(object sender, EventArgs e)
         {
-            //name from textbox is added
-            lbNameListArray.Items.Add(tbTeamMemberNameArray.Text);
+            string name = tbTeamMemberNameArray.Text;
 
-            //new name and balance are added to each list 
-            //here we need to make a copy of the allArrayNames and add a spot
-            lbCurrentStandingOfDebtArray.Items.Add(allArrayNames[allArrayNames.Length - 1] + '\t' + '\t' + "€" + balanceArray[balanceArray.Length - 1]);
+            if (counter < allArrayNames.Length)
+            {
+                allArrayNames[counter] = name;
+                lbNameListArray.Items.Add(tbTeamMemberNameArray.Text);
+                counter++;
+            }
+            else
+            {
+
+                //name from textbox is added
+                lbNameListArray.Items.Add(tbTeamMemberNameArray.Text);
+
+                //new name and balance are added to each list 
+
+                string[] copy = new string[allArrayNames.Length];
+                allArrayNames = new string[allArrayNames.Length + 1];
+
+                double[] copyBal = new double[balanceArray.Length];
+                balanceArray = new double[balanceArray.Length + 1];
+
+                for (int i = 0; i < copy.Length; i++)
+                {
+                    allArrayNames[i] = copy[i];
+                    balanceArray[i] = copyBal[i];
+                }
+
+                lbCurrentStandingOfDebtArray.Items.Add(allArrayNames[allArrayNames.Length - 1] + '\t' + '\t' + "€" + balanceArray[balanceArray.Length - 1]);
+
+                allArrayNames[counter] = name;
+                balanceArray[counter] = 0.00;
+            }
         }
 
         private void btnRemoveNameArray_Click(object sender, EventArgs e)
@@ -134,7 +167,7 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
             }
             else
             {
-                if(lbNameListArray.Items.Contains(name) && balanceArray[indexBalance] != 0.00) //if the balance is not 0 show message
+                if (lbNameListArray.Items.Contains(name) && balanceArray[indexBalance] != 0.00) //if the balance is not 0 show message
                 {
                     MessageBox.Show("Balance is not €0.00");
                 }
@@ -170,11 +203,11 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
 
         private void btnBuyARoundArray_Click(object sender, EventArgs e)
         {
-                int indexDrinkers;
-                int indexBuyer;
+            int indexDrinkers;
+            int indexBuyer;
 
-                string drinkers = lbRoundInfoArray.Items.Count.ToString();
-                string buyer = tbRoundBuyerArray.Text;
+            string drinkers = this.lbRoundInfoArray.Items.Count.ToString();
+            string buyer = tbRoundBuyerArray.Text;
             //check if there is a name in the listbox
             if (lbRoundInfoArray.Items.Count == 0)
             {
@@ -194,20 +227,26 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
                     }
                     else //if everything has passed update the balances of the drinkers and buyers
                     {
-                    //indexDrinkers = allArrayNames.IndexOf(lbRoundInfoArray.Items.Count.ToString()); //this should be used to get the index of the drinker's names
-                    //indexBuyer = allArrayNames.IndexOf(buyer); //this should be used to get the index of the Buyer's name
-
+                        indexDrinkers = Array.IndexOf(allArrayNames, drinkers); //this should be used to get the index of the drinker's names
+                        indexBuyer = Array.IndexOf(allArrayNames, buyer); //this should be used to get the index of the Buyer's name
+                        //label8.Text = indexBuyer.ToString();
 
                         //these lines are to update the balance values, don't work yet bc of the above two lines 
                         //balanceArray[indexDrinkers] = balanceArray[indexDrinkers] - (Convert.ToInt32(tbRoundPrice.Text)/lbRoundInfo.Items.Count);
-                        //balanceArray[indexBuyer] = balanceArray[indexBuyer] + (Convert.ToInt32(tbRoundPrice.Text));
+                        balanceArray[indexBuyer] = balanceArray[indexBuyer] + (Convert.ToInt32(tbRoundPriceArray.Text));
+                        //label8.Text = balanceArray[indexBuyer].ToString();
                     }
                 }
             }
         }
 
 
+
+
         //HERE STARTS THE CODE FOR THE LIST STUFF
+
+
+
 
 
         private void btnAddDefaultsList_Click(object sender, EventArgs e)
@@ -251,7 +290,7 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
             //here we need to make a copy of the allArrayNames and add a spot
 
 
-            lbCurrentStandingOfDebtList.Items.Add(allListNames[allListNames.Count - 1]+ '\t' + '\t' + "€" + balanceList[balanceList.Count - 1]);
+            lbCurrentStandingOfDebtList.Items.Add(allListNames[allListNames.Count - 1] + '\t' + '\t' + "€" + balanceList[balanceList.Count - 1]);
 
         }
 
@@ -327,10 +366,11 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
                         indexDrinkers = allListNames.IndexOf(drinkers); //this returns -1 instead of the actual index of the names, needs fixing
                         indexBuyer = allListNames.IndexOf(buyer); //so dies this
 
-                        
+
                         //these lines are to update the balance values, don't work yet bc of the above two lines 
-                        //balanceArray[indexDrinkers] = balanceArray[indexDrinkers] - (Convert.ToInt32(tbRoundPrice.Text)/lbRoundInfo.Items.Count);
-                       // balanceArray[indexBuyer] = balanceArray[indexBuyer] + (Convert.ToInt32(tbRoundPriceArray.Text));
+                        //balanceList[indexDrinkers] = balanceList[indexDrinkers] - (Convert.ToInt32(tbRoundPriceList.Text)/lbRoundInfoList.Items.Count);
+                        balanceList[indexBuyer] = balanceList[indexBuyer] + (Convert.ToInt32(tbRoundPriceList.Text));
+
                     }
                 }
             }

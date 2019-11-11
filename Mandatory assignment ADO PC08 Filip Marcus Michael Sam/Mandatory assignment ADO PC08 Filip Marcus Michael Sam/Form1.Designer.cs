@@ -51,6 +51,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.List = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.lbCurrentStandingOfDebtList = new System.Windows.Forms.ListBox();
             this.btnBuyARoundList = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -69,7 +70,7 @@
             this.lbNameListList = new System.Windows.Forms.ListBox();
             this.btnRemovePersonList = new System.Windows.Forms.Button();
             this.btnAddDefaultsList = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.lbCurrentStandingOfDebtArray);
             this.groupBox3.Controls.Add(this.btnBuyARoundArray);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
@@ -358,6 +360,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Balance Infortmation";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(154, 326);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "label7";
+            // 
             // lbCurrentStandingOfDebtList
             // 
             this.lbCurrentStandingOfDebtList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -574,14 +585,14 @@
             this.btnAddDefaultsList.UseVisualStyleBackColor = false;
             this.btnAddDefaultsList.Click += new System.EventHandler(this.btnAddDefaultsList_Click);
             // 
-            // label7
+            // label8
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(154, 326);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "label7";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(102, 280);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "label8";
             // 
             // Form1
             // 
@@ -593,6 +604,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -653,6 +665,7 @@
         private System.Windows.Forms.Button btnRemovePersonList;
         private System.Windows.Forms.Button btnAddDefaultsList;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 
