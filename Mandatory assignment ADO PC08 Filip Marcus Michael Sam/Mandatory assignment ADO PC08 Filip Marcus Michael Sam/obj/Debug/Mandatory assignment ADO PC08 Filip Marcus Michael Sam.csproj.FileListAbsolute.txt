@@ -1,0 +1,9 @@
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\bin\Debug\Mandatory assignment ADO PC08 Filip Marcus Michael Sam.exe.config
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\bin\Debug\Mandatory assignment ADO PC08 Filip Marcus Michael Sam.exe
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\bin\Debug\Mandatory assignment ADO PC08 Filip Marcus Michael Sam.pdb
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\obj\Debug\Mandatory assignment ADO PC08 Filip Marcus Michael Sam.csprojAssemblyReference.cache
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\obj\Debug\Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam.Form1.resources
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\obj\Debug\Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam.Properties.Resources.resources
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\obj\Debug\Mandatory assignment ADO PC08 Filip Marcus Michael Sam.csproj.GenerateResource.cache
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\obj\Debug\Mandatory assignment ADO PC08 Filip Marcus Michael Sam.exe
+D:\visual studio projcets\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\Mandatory assignment ADO PC08 Filip Marcus Michael Sam\obj\Debug\Mandatory assignment ADO PC08 Filip Marcus Michael Sam.pdb
