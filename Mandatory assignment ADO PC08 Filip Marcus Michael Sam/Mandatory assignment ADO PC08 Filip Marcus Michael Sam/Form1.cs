@@ -72,8 +72,6 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
             lbCurrentStandingOfDebtList.Items.Clear();
         }
 
-
-
         //HERE STARTS THE CODE FOR THE ARRAY STUFF
 
 
@@ -122,10 +120,7 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
 
             //new name and balance are added to each list 
             //here we need to make a copy of the allArrayNames and add a spot
-
-            string[] copy = new string[1];
             lbCurrentStandingOfDebtArray.Items.Add(allArrayNames[allArrayNames.Length - 1] + '\t' + '\t' + "€" + balanceArray[balanceArray.Length - 1]);
-
         }
 
         private void btnRemoveNameArray_Click(object sender, EventArgs e)
@@ -212,12 +207,7 @@ namespace Mandatory_assignment_ADO_PC08_Filip_Marcus_Michael_Sam
         }
 
 
-
-
         //HERE STARTS THE CODE FOR THE LIST STUFF
-
-
-
 
 
         private void btnAddDefaultsList_Click(object sender, EventArgs e)
